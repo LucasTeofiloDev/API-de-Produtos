@@ -1,0 +1,27 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## Build results
+[Bb]in/
+[Oo]bj/
+
+## User-specific settings and local tooling
+*.userosscache
+*.sln.docstates
+
+## Test and coverage output
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+## Environment and secrets
+.env
+.env.*
+appsettings.Local.json
+
+## OS files
+.DS_Store
+Thumbs.db
