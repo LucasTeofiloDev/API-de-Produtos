@@ -7,7 +7,7 @@ namespace ApiDeProdutos.Services.Implementations
     public class ProductServicesImpl : IProductServices
     {
 
-        private MSSQLContext _context;
+        private readonly MSSQLContext _context;
 
         public ProductServicesImpl(MSSQLContext context)
         {
@@ -26,7 +26,7 @@ namespace ApiDeProdutos.Services.Implementations
             return _context.Products.ToList();
         }
 
-        public Product BuscarPorId(int id)
+        public Product? BuscarPorId(int id)
         {
             return _context.Products.Find(id);
             

@@ -17,6 +17,10 @@ coverage/
 *.coverage
 *.coveragexml
 
+## Application logs
+Logs/
+*.log
+
 ## Environment and secrets
 .env
 .env.*

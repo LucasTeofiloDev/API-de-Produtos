@@ -1,6 +1,6 @@
-﻿using ApiDeProdutos.Model;
+﻿using ApiDeProdutos.Configurations;
+using ApiDeProdutos.Model;
 using ApiDeProdutos.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiDeProdutos.Controllers
@@ -11,9 +11,14 @@ namespace ApiDeProdutos.Controllers
     {
         private readonly IProductServices _productServices;
 
-        public ProductController(IProductServices productServices)
+        private readonly ILogger<ProductController> _logger;
+
+        public ProductController(
+            IProductServices productServices,
+            ILogger<ProductController> logger)
         {
             _productServices = productServices;
+            _logger = logger;
         }
 
         [HttpGet("{id}")]

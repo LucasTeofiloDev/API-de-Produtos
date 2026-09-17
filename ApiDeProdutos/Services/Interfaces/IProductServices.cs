@@ -7,7 +7,7 @@ namespace ApiDeProdutos.Services.Interfaces
 
         public Product CadastrarProduto(Product product);
         public List<Product> BuscarTodos();
-        public Product BuscarPorId(int id);
+        public Product? BuscarPorId(int id);
         public Product AtualizarProduto(Product product);
         public void ExcluirProduto(int id);
 

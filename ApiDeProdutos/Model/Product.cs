@@ -14,13 +14,13 @@ namespace ApiDeProdutos.Model
         public int Id { get; set; }
         [Column("nome")]
         [Required]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [Column("price")]
         [Required]
         public decimal Price { get; set; }
         [Column("categoria")]
         [Required]
-        public string Category { get; set; } 
+        public required string Category { get; set; }
 
 
     }

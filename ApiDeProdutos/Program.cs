@@ -1,22 +1,17 @@
-using ApiDeProdutos.Model.Context;
-using Microsoft.Extensions.Options;
-using Microsoft.EntityFrameworkCore;
 using ApiDeProdutos.Services.Interfaces;
 using ApiDeProdutos.Services.Implementations;
+using ApiDeProdutos.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<MSSQLContext>(options =>
-{
-    options.UseSqlServer(connectionString);
-});
+builder.Services.AddDatabaseConfig(builder.Configuration);
 
 builder.Services.AddScoped<IProductServices, ProductServicesImpl>();
+
+builder.Host.AddSerilogConfig(builder.Configuration);
 
 var app = builder.Build();
 
